@@ -11,10 +11,11 @@ How-To Use:
 	- Add MMPDeepSleepPreventer.h and MMPDeepSleepPreventer.m as well as
 	  MMPSilence.wav to your project.
 	- Add “AVFoundation.framework” and “AudioToolbox.framework” to your project.
+	- Add `audio` to the array for the `UIBackgroundModes` key in your Info.plist
 	- Import MMPDeepSleepPreventer.h where you want to use the class.
 	- Instantiate an MMPDeepSleepPreventer object.
 	- Use -[MMPDeepSleepPreventer startPreventSleep]
-	  and -[MMPDeepSleepPreventer stopPreventSleep] when needed.
+	  and -[MMPDeepSleepPreventer stopPreventSleep] when needed. Do this before the app actually moves to background.
 
 
 Inspired by:
