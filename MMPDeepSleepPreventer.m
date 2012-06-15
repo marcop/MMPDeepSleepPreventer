@@ -81,24 +81,14 @@
 	// Set up audio player with sound file
 	audioPlayer_ = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL
 	                                                      error:nil];
-	[fileURL release];
 	
 	[self.audioPlayer prepareToPlay];
 	
-	// You may want to set this to 0.0 even if your sound file is silent.
-	// I don't know exactly, if this affects battery life, but it can't hurt.
-	[self.audioPlayer setVolume:0.0];
+    self.audioPlayer.volume = 0.1;
+    
+    self.audioPlayer.numberOfLoops = -1;
 	
     return self;
-}
-
-
-- (void)dealloc
-{
-	[preventSleepTimer_ release];
-	[audioPlayer_       release];
-	
-	[super dealloc];
 }
 
 
@@ -120,7 +110,6 @@
 	                                                      userInfo:nil
 	                                                       repeats:YES];
 	self.preventSleepTimer = preventSleepTimer;
-	[preventSleepTimer release];
 	
 	// Add the timer to the current run loop.
 	[[NSRunLoop currentRunLoop] addTimer:self.preventSleepTimer
@@ -195,7 +184,7 @@
 	
 	if (propertySetError)
 	{
-		MMPALog(@"Error setting kAudioSessionProperty_OverrideCategoryMixWithOthers: %d", propertySetError);
+		MMPALog(@"Error setting kAudioSessionProperty_OverrideCategoryMixWithOthers: %ld", propertySetError);
 	}
 }
 
