@@ -1,29 +1,35 @@
-Description:
-	MMPDeepSleepPreventer is an Objective-C class used to prevent iOS devices from deep sleeping.
-	This has been tested on an iOS versions 3.0 to 4.2.1, so far and should work on all devices,
-	running one of these iOS versions.
-	
-	MMPDeepSleepPreventer is released under the New BSD License. (Below is the exact license text).
-	If you use this code a little attribution note would be greatly appreciated.
+Description
+----------
+MMPDeepSleepPreventer is an Objective-C class used to prevent iOS devices from deep sleeping.
+This has been tested on an iOS versions 3.0 to 5.0, so far and should work on all devices running one of these iOS versions.
+
+MMPDeepSleepPreventer is released under the New BSD License. (Below is the exact license text).
+If you use this code a little attribution note would be greatly appreciated.
 
 
-How-To Use:
-	- Add MMPDeepSleepPreventer.h and MMPDeepSleepPreventer.m as well as
-	  MMPSilence.wav to your project.
-	- Add “AVFoundation.framework” and “AudioToolbox.framework” to your project.
-	- Add `audio` to the array for the `UIBackgroundModes` key in your Info.plist
-	- Import MMPDeepSleepPreventer.h where you want to use the class.
-	- Instantiate an MMPDeepSleepPreventer object.
-	- Use -[MMPDeepSleepPreventer startPreventSleep]
-	  and -[MMPDeepSleepPreventer stopPreventSleep] when needed. Do this before the app actually moves to background.
+How-To Use
+----------
+- Add MMPDeepSleepPreventer.h and MMPDeepSleepPreventer.m as well as
+  MMPSilence.wav to your project.
+- Add “AVFoundation.framework” and “AudioToolbox.framework” to your project.
+- Add `audio` to the array for the `UIBackgroundModes` key in your Info.plist
+- Import MMPDeepSleepPreventer.h where you want to use the class.
+- Instantiate an MMPDeepSleepPreventer object.
+- Use -[MMPDeepSleepPreventer startPreventSleep]
+  and -[MMPDeepSleepPreventer stopPreventSleep] when needed. Do this before the app actually moves to background.
+
+App Store compatibility
+-----------------------
+As of August 2012, setting the `audio` flag in `UIBackgroundModes` when you are, in fact, not playing any audible audio is likely to get your app rejected.
+
+Inspired by
+-----------
+- Some question on stackoverflow.com
+- Some posts on Apple's devforums.
 
 
-Inspired by:
-	Some question on stackoverflow.com
-	Some posts on Apple's devforums.
-
-
-License:
+License
+-------
 Copyright (c) 2009-2011, Marco Peluso - marcopeluso.com
 All rights reserved.
 
